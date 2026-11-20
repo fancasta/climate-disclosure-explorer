@@ -1,25 +1,34 @@
-# Finding transition-plan evidence in climate disclosures
+# Climate Disclosure Explorer
 
-A sustainability report can span hundreds of pages. A reviewer looking for a low-carbon transition plan needs the passage, its page and a reason to inspect it. This fork of the [Group 17 decarbonisation capstone](https://github.com/CWei88/Group17-Capstone) features my work on extracting report text and retrieving candidate sentences.
+**Overview**　·　[Case studies](CASE_STUDIES.md)　·　[Reproduce a case](CONTRIBUTING.md)
 
-## My contribution
+Find the page behind a climate or energy claim. The explorer turns publisher PDFs into searchable pages, ranks them for a question, and links the result back to its source. The review distinguishes reported performance, corporate targets, demand forecasts and policy proposals.
 
-I developed the PDF extraction and sentence-retrieval notebooks in my own repository in October 2022. The extraction notebook preserves page breaks, cleans fragmented lines and prepares sentences for analysis. The transition-plan notebook builds a reference corpus and uses TF-IDF and cosine similarity to find passages with related wording. You can trace the work through my [vectorizer revision](https://github.com/fancasta/Draft-Text-Processing-Pipeline/commit/53fd9880e8999fc47af17406cad846aee31c3809) and [retrieval revision](https://github.com/fancasta/Draft-Text-Processing-Pipeline/commit/c56fea83abcec98c8d876d5162effd8c990cc531). Both notebooks appear in the [team snapshot](https://github.com/fancasta/Group17-Capstone/tree/ae337c4f2a97b56cea8af7dad2a108e092989585).
+[![Published examples view of Climate Disclosure Explorer](docs/published-examples.png)](CASE_STUDIES.md)
 
-## Try the evidence pipeline
+## Explore the results
 
-The current fork adds a small, offline example. It reads the text layer of a PDF, splits each page into sentences, compares them with a reference list, and emits one JSON record per page. Each match retains the actual report sentence and the reference row used to fit the vectorizer. The same row-selection function now backs the historical transition-plan notebook.
+- **Oracle** reports 92% renewable electricity use in its cloud. The report also lists regional figures and future targets. The case study traces each number to its scope. [Oracle examples](CASE_STUDIES.md#oracle)
+- **Anthropic** projects US power capacity needs for AI in 2028. Its executive summary outranks the page that explains the forecast, illustrating how repeated wording affects search. [Anthropic examples](CASE_STUDIES.md#anthropic)
+- **OpenAI** proposes facility-level electricity reporting and describes a cooling system planned for one site. The examples show why document type matters when interpreting a match. [OpenAI examples](CASE_STUDIES.md#openai)
 
-![Output from a synthetic four-page report showing an exact match, a below-threshold match, a page with no shared terms and a blank page](docs/evidence.png)
+## Run a search
 
-With Python 3.12, run the following from the repository root.
+With Python 3.12, install the demo dependencies. The small fictional PDF is included.
 
 ```sh
 python -m pip install -r requirements-demo.txt
 python evidence.py examples/mock-report.pdf examples/reference.txt
-python -m unittest -v test_evidence
+python -m unittest -v test_evidence test_review_reports
 ```
 
-The [example PDF](examples/mock-report.pdf) and [three reference sentences](examples/reference.txt) are fictional. Try changing a reference and rerunning the command. A cosine score at or above the original 30-degree cutoff (about 0.866) flags a passage for review. Similar wording can support different claims, and a paraphrase can score poorly. A reviewer still needs to read the passage. Scanned pages without a text layer return `no_text`.
+The sentence matcher returns one JSON record per page, including the source sentence, matched reference and cosine score. It flags blank pages and weak matches. The public-report study uses a separate page-ranking method that fits vocabulary across each document. Its six queries, PDF fingerprints and top-three results are available in the [case study file](CASE_STUDIES.md).
 
-The [portable implementation](evidence.py) runs independently of the historical notebooks, which use the original PDF paths, NLP assets and corpus layout. The broader sector datasets and other disclosure attributes belong to the team project.
+## Project components
+
+| Component | Purpose |
+| --- | --- |
+| [Page retrieval](review_reports.py) | Normalize PDF text, weight terms within each document and rank pages for a query. |
+| [Sentence retrieval](evidence.py) | Trace a match back to the candidate sentence, reference row and PDF page. |
+| [Full capstone pipeline](pipeline/) | The upstream research code extracts text, tables and environmental disclosure attributes. Its [original setup instructions](https://github.com/CWei88/Group17-Capstone/blob/4ea9478a551bafa79449aa4105246ee9c9aebf75/README.md) describe the Python 3.9 environment and model files. |
+| [Companion dashboard](https://github.com/fancasta/Capstone-Dashboard#readme) | Explore sector summaries, company filings, and the six published cases with direct PDF page links. |

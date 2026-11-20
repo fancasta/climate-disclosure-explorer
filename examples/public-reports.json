@@ -1,0 +1,56 @@
+{
+  "Oracle": {
+    "title": "Environmental and Social Impact Report \u00b7 FY2024",
+    "type": "Corporate disclosure",
+    "url": "https://www.oracle.com/a/ocom/docs/environmental-and-social-impact-report-2024.pdf",
+    "sha256": "f4c5b5250f5170de280ca0da9e114da7287e16c49fb4c4ca41f0c9e4714c18cd",
+    "queries": [
+      {
+        "label": "Renewable electricity in the cloud",
+        "query": "renewable electricity cloud data centers renewable energy",
+        "review_page": 37
+      },
+      {
+        "label": "Water and waste targets",
+        "query": "potable water use waste to landfill per square foot",
+        "review_page": 36
+      }
+    ]
+  },
+  "Anthropic": {
+    "title": "Build AI in America \u00b7 July 2025",
+    "type": "Policy report",
+    "url": "https://assets.claude.com/0dc382a2086f6a054eeb17e8a531bd9625b8e6e5.pdf",
+    "sha256": "c929d73be07db93086f78818bd5145caee2d01da7344b93e1c2d7966e96e71bf",
+    "queries": [
+      {
+        "label": "Projected power demand",
+        "query": "electric capacity gigawatts AI workloads United States 2028",
+        "review_page": 5
+      },
+      {
+        "label": "Transmission upgrades",
+        "query": "transmission upgrades siting approval power lines federal lands",
+        "review_page": 19
+      }
+    ]
+  },
+  "OpenAI": {
+    "title": "AI Infrastructure That Works for America \u00b7 November 2026",
+    "type": "Policy blueprint",
+    "url": "https://cdn.openai.com/pdf/compute-campus-policy-blueprint.pdf",
+    "sha256": "dd44ad43a77545863468e47dc27b684653c318d6b6a1fa097983c1e48e7d3219",
+    "queries": [
+      {
+        "label": "Power-use reporting",
+        "query": "annual power usage effectiveness facility electricity reporting",
+        "review_page": 8
+      },
+      {
+        "label": "On-site cooling",
+        "query": "closed-loop cooling water consumption low-emission backup generation",
+        "review_page": 8
+      }
+    ]
+  }
+}
