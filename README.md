@@ -1,10 +1,10 @@
 # Climate Disclosure Explorer
 
-**Overview**　·　[Case studies](CASE_STUDIES.md)　·　[Reproduce a case](CONTRIBUTING.md)
+[**Try the live dashboard →**](https://fancasta.github.io/climate-disclosure-explorer/)　·　**Overview**　·　[Case studies](CASE_STUDIES.md)　·　[Reproduce a case](CONTRIBUTING.md)
 
 Find the page behind a climate or energy claim. The explorer turns publisher PDFs into searchable pages, ranks them for a question, and links the result back to its source. The review distinguishes reported performance, corporate targets, demand forecasts and policy proposals.
 
-[![Published examples view of Climate Disclosure Explorer](docs/published-examples.png)](CASE_STUDIES.md)
+[![Published examples view of Climate Disclosure Explorer](docs/published-examples.png)](https://fancasta.github.io/climate-disclosure-explorer/)
 
 ## Explore the results
 
