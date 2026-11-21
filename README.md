@@ -6,7 +6,7 @@ Search **3,035 pages from 27 reports** across automotive, utilities, oil and gas
 
 The project began as **Using Machine Learning to Explore Decarbonisation Strategies**, an NUS Business Analytics capstone for NatWest Markets (August–December 2022). The original pipeline identifies transition-plan indicators in corporate reports. The public edition adds cross-report search, sector comparisons and later publications from Oracle, Anthropic and OpenAI.
 
-[![ESG Disclosure Explorer with a cross-sector human-rights search](docs/esg-search.png)](https://fancasta.github.io/climate-disclosure-explorer/)
+[![ESG Disclosure Explorer home with a cited excerpt from NRG Energy](docs/esg-home.png)](https://fancasta.github.io/climate-disclosure-explorer/)
 
 ## Try a search
 
@@ -16,13 +16,7 @@ The project began as **Using Machine Learning to Explore Decarbonisation Strateg
 | [Collective bargaining](https://fancasta.github.io/climate-disclosure-explorer/?topic=Collective+bargaining) | 55 | 16 |
 | [Board independence](https://fancasta.github.io/climate-disclosure-explorer/?topic=Board+independence) | 24 | 9 |
 
-Use **Read page excerpts** to open passages from the source, or **Evidence notebook** for ten annotated examples. The sector chart counts matching pages. The coverage grid shows the share of indexed pages containing a topic from each ESG pillar. [Case studies and search methods](CASE_STUDIES.md)
-
-## Explore the results
-
-- **Oracle** reports 92% renewable electricity use in its cloud. The report also lists regional figures and future targets. The case study traces each number to its scope. [Oracle examples](CASE_STUDIES.md#oracle)
-- **Anthropic** projects US power capacity needs for AI in 2028. Its executive summary outranks the page that explains the forecast, illustrating how repeated wording affects search. [Anthropic examples](CASE_STUDIES.md#anthropic)
-- **OpenAI** proposes facility-level electricity reporting and describes a cooling system planned for one site. The examples show why document type matters when interpreting a match. [OpenAI examples](CASE_STUDIES.md#openai)
+Choose a question to compare companies. Select a company to see its matching pages and open the source passage. For example, the water search leads to NRG Energy’s description of cooling towers on PDF page 42. Counts indicate where a topic is discussed. A reader can then examine whether the passage describes a target, an action or a measured outcome. [Read the NRG Energy passage](https://fancasta.github.io/climate-disclosure-explorer/?topic=Water+stewardship&publisher=NRG+Energy&page=42) · [Case studies and search methods](CASE_STUDIES.md)
 
 ## Run a search
 
@@ -35,6 +29,10 @@ python -m unittest -v test_evidence test_review_reports
 ```
 
 The sentence matcher returns one JSON record per page, including the source sentence, matched reference and cosine score. It flags blank pages and weak matches. The public-report study uses a separate page-ranking method that fits vocabulary across each document. Its six queries, PDF fingerprints and top-three results are available in the [case study file](CASE_STUDIES.md).
+
+## Original capstone
+
+The 2022 dashboard paired nine climate-disclosure indicators with supporting sentences. For the long-term net-zero classifier, the training data contains 1,003 labelled sentences, including 196 positive examples. [Original labelled dataset](https://github.com/CWei88/Group17-Capstone/blob/4ea9478a551bafa79449aa4105246ee9c9aebf75/pipeline/Notebooks/training_datasets/Attribute%2012/A12.csv) · [Dashboard schema](https://github.com/fancasta/esg-disclosure-dashboard/blob/538607eb71014d29e5b3d88bc7a8a49bde72fdd9/mysql/backup.sql)
 
 ## Project components
 

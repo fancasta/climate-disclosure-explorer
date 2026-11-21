@@ -2,7 +2,7 @@
 
 [Overview](README.md)　·　**Case studies**　·　[Reproduce a case](CONTRIBUTING.md)
 
-[**Search all 27 reports →**](https://fancasta.github.io/climate-disclosure-explorer/)　·　[Open the evidence notebook](https://fancasta.github.io/climate-disclosure-explorer/?view=notes)
+[**Search all 27 reports →**](https://fancasta.github.io/climate-disclosure-explorer/)　·　[Browse companies](https://fancasta.github.io/climate-disclosure-explorer/?view=explore)
 
 ## Search across sectors
 
@@ -16,15 +16,13 @@ The searchable collection covers 24 distinct corporate reports in the capstone s
 
 NRG Energy p. 42 describes water-source and cooling-tower choices. Shell p. 158 identifies independent directors on the audit committee. Check a result’s organisational scope before comparing it across companies. A custom search for [methane leakage](https://fancasta.github.io/climate-disclosure-explorer/?q=methane+leakage) finds one page in one report. Both words appear on that page. Open the excerpts to check their context.
 
-[![Ten annotated corporate report passages in the evidence notebook](docs/esg-notebook.png)](https://fancasta.github.io/climate-disclosure-explorer/?view=notes)
+[![Company results with matching source pages](docs/esg-results.png)](https://fancasta.github.io/climate-disclosure-explorer/?topic=Renewable+electricity&sector=Diversified)
 
-Free-text search ranks pages across the collection using BM25 and requires all significant tokens. A guided topic first selects pages containing one of its phrases and ranks them using the words in those phrases. Sector bars update with each search. The heatmap always uses the full sector as its denominator.
+Free-text search ranks pages across the collection using BM25 and requires all significant tokens. A guided topic selects pages containing one of its phrases and ranks them using the words in those phrases. The explorer groups matching pages by company. Open a company to read individual pages.
 
 ## Three publisher case studies
 
 Six searches across three publisher PDFs (142 pages) illustrate how wording, document type and reporting scope affect retrieval. Each search ranks pages within one PDF. The interpretations below are editorial readings of the source pages.
-
-![Published report explorer](docs/published-examples.png)
 
 ## Oracle
 
