@@ -1,6 +1,26 @@
-# Public report case studies
+# ESG report case studies
 
 [Overview](README.md)　·　**Case studies**　·　[Reproduce a case](CONTRIBUTING.md)
+
+[**Search all 27 reports →**](https://fancasta.github.io/climate-disclosure-explorer/)　·　[Open the evidence notebook](https://fancasta.github.io/climate-disclosure-explorer/?view=notes)
+
+## Search across sectors
+
+The searchable collection covers 24 distinct corporate reports in the capstone sample and test folders, plus the three later technology publications. Seven pages contain no indexable terms, leaving 3,035 searchable pages out of 3,042. A page can match more than one pillar.
+
+| Guided search | Matching pages | Reports |
+| --- | ---: | ---: |
+| [Water stewardship](https://fancasta.github.io/climate-disclosure-explorer/?topic=Water+stewardship) | 126 | 24 |
+| [Collective bargaining](https://fancasta.github.io/climate-disclosure-explorer/?topic=Collective+bargaining) | 55 | 16 |
+| [Board independence](https://fancasta.github.io/climate-disclosure-explorer/?topic=Board+independence) | 24 | 9 |
+
+NRG Energy p. 42 describes water-source and cooling-tower choices. Shell p. 158 identifies independent directors on the audit committee. Check a result’s organisational scope before comparing it across companies. A custom search for [methane leakage](https://fancasta.github.io/climate-disclosure-explorer/?q=methane+leakage) finds one page in one report. Both words appear on that page. Open the excerpts to check their context.
+
+[![Ten annotated corporate report passages in the evidence notebook](docs/esg-notebook.png)](https://fancasta.github.io/climate-disclosure-explorer/?view=notes)
+
+Free-text search ranks pages across the collection using BM25 and requires all significant tokens. A guided topic first selects pages containing one of its phrases and ranks them using the words in those phrases. Sector bars update with each search. The heatmap always uses the full sector as its denominator.
+
+## Three publisher case studies
 
 Six searches across three publisher PDFs (142 pages) illustrate how wording, document type and reporting scope affect retrieval. Each search ranks pages within one PDF. The interpretations below are editorial readings of the source pages.
 

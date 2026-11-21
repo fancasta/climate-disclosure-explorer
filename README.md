@@ -1,10 +1,22 @@
-# Climate Disclosure Explorer
+# ESG Disclosure Explorer
 
 [**Try the live dashboard →**](https://fancasta.github.io/climate-disclosure-explorer/)　·　**Overview**　·　[Case studies](CASE_STUDIES.md)　·　[Reproduce a case](CONTRIBUTING.md)
 
-Find the page behind a climate or energy claim. The explorer turns publisher PDFs into searchable pages, ranks them for a question, and links the result back to its source. The review distinguishes reported performance, corporate targets, demand forecasts and policy proposals.
+Search **3,035 pages from 27 reports** across automotive, utilities, oil and gas, real estate, diversified businesses and technology. Enter your own terms or use 30 guided searches across environmental, social and governance topics. Every result identifies its report and physical PDF page.
 
-[![Published examples view of Climate Disclosure Explorer](docs/published-examples.png)](https://fancasta.github.io/climate-disclosure-explorer/)
+The project began as **Using Machine Learning to Explore Decarbonisation Strategies**, an NUS Business Analytics capstone for NatWest Markets (August–December 2022). The original pipeline identifies transition-plan indicators in corporate reports. The public edition adds cross-report search, sector comparisons and later publications from Oracle, Anthropic and OpenAI.
+
+[![ESG Disclosure Explorer with a cross-sector human-rights search](docs/esg-search.png)](https://fancasta.github.io/climate-disclosure-explorer/)
+
+## Try a search
+
+| Guided search | Matching pages | Reports |
+| --- | ---: | ---: |
+| [Water stewardship](https://fancasta.github.io/climate-disclosure-explorer/?topic=Water+stewardship) | 126 | 24 |
+| [Collective bargaining](https://fancasta.github.io/climate-disclosure-explorer/?topic=Collective+bargaining) | 55 | 16 |
+| [Board independence](https://fancasta.github.io/climate-disclosure-explorer/?topic=Board+independence) | 24 | 9 |
+
+Use **Read page excerpts** to open passages from the source, or **Evidence notebook** for ten annotated examples. The sector chart counts matching pages. The coverage grid shows the share of indexed pages containing a topic from each ESG pillar. [Case studies and search methods](CASE_STUDIES.md)
 
 ## Explore the results
 
@@ -31,4 +43,4 @@ The sentence matcher returns one JSON record per page, including the source sent
 | [Page retrieval](review_reports.py) | Normalize PDF text, weight terms within each document and rank pages for a query. |
 | [Sentence retrieval](evidence.py) | Trace a match back to the candidate sentence, reference row and PDF page. |
 | [Full capstone pipeline](pipeline/) | The upstream research code extracts text, tables and environmental disclosure attributes. Its [original setup instructions](https://github.com/CWei88/Group17-Capstone/blob/4ea9478a551bafa79449aa4105246ee9c9aebf75/README.md) describe the Python 3.9 environment and model files. |
-| [Companion dashboard](https://github.com/fancasta/Capstone-Dashboard#readme) | Explore sector summaries, company filings, and the six published cases with direct PDF page links. |
+| [Companion dashboard](https://github.com/fancasta/esg-disclosure-dashboard#readme) | Search 27 public reports, explore original company filings and trace findings to physical PDF pages. |
